@@ -9,13 +9,17 @@ const EmployeCard = () => {
   const [data , setData] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/employeeList").then((res) => setData(res.data.employees));
+    axios
+      .get("https://skynich-backend.onrender.com/api/employeeList")
+      .then((res) => setData(res.data.employees));
   },[])
 
  const handleDelete = async(id) => {
   try{
 
-    const res = axios.delete(`/api/deleteEmployee/${id}`);
+    const res = axios.delete(
+      `https://skynich-backend.onrender.com/api/deleteEmployee/${id}`
+    );
     console.log(res);
 
   }catch(err){

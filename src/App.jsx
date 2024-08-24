@@ -35,11 +35,15 @@ function App() {
       }
 
       try {
-        const res = await axios.post("/api/addEmployee", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
+        const res = await axios.post(
+          "https://skynich-backend.onrender.com/api/addEmployee",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
 
         console.log(res);
         toast.success("Form submitted");
